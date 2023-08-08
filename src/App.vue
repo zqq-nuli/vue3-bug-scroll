@@ -18,7 +18,8 @@
 </script>
 
 <template>
-    <HelloWorld msg="Vite + Vue" v-if="isHell" />
+    <!-- v-if or v-show or opacity There will be bugs -->
+    <HelloWorld msg="Vite + Vue" :class="{ opic: isHell }" />
     <div class="full">
         <div>金额:{{ moneyToFixed(money) }}</div>
     </div>
@@ -27,5 +28,8 @@
 <style scoped>
     .full {
         height: 3000px;
+    }
+    .opic {
+        opacity: 0;
     }
 </style>
